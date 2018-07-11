@@ -25,19 +25,19 @@ public class FileDaoImpl extends BaseDao implements FileDao {
 
 	@Override
 	public Integer uploadFile(File file) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public Integer deleteFile(File file) {
-		// TODO Auto-generated method stub
-		return null;
+		Integer fileId=file.getFileId();
+		String sql="delete from t_file where fileId=?"; 
+		return this.executeDML(sql, fileId);
 	}
 
 	@Override
 	public Integer downloadFile(File file) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
