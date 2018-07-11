@@ -1,12 +1,13 @@
 package com.xnkd.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import com.xnkd.po.*;
 
 public interface DirectoryDao {
 	
-	public Directory selectPath(Map<String,Object> params);
+	public List<Directory> selectPath(Map<String,Object> params);
 	
 	public Integer deleteDirectory(Directory directory);
 	

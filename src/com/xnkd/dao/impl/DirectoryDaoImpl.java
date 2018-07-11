@@ -1,23 +1,30 @@
 package com.xnkd.dao.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import com.xnkd.dao.BaseDao;
 import com.xnkd.dao.DirectoryDao;
 import com.xnkd.po.Directory;
+import com.xnkd.po.File;
 
 public class DirectoryDaoImpl extends BaseDao implements DirectoryDao {
 
 	@Override
-	public Directory selectPath(Map<String, Object> params) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Directory> selectPath(Map<String, Object> params) {
+		Integer dirId=(Integer) params.get("dirId");
+		
+		String sql="select * from t_directory where dirId=?";
+		List<Directory> directoryList=this.executeDQL(Directory.class, sql, dirId);
+		return directoryList;
 	}
 
 	@Override
 	public Integer deleteDirectory(Directory directory) {
-		// TODO Auto-generated method stub
-		return null;
+		Integer dirId=(Integer) directory.getDirId();
+		
+		String sql="delete from t_directory where dirId=?";
+		return this.executeDML(sql, dirId);
 	}
 
 	@Override
