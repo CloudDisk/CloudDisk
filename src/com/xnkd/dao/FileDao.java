@@ -7,7 +7,7 @@ import com.xnkd.po.*;
 
 public interface FileDao {
 	
-public File selectFile(Map<String,Object> params);
+public List<File> selectFile(Map<String,Object> params);
 	
 	public Integer uploadFile(File file);
 	

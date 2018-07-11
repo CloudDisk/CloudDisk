@@ -20,7 +20,7 @@
 			.login{
 				width: 310px;
 				height: 402px;
-				background-color: aquamarine;
+				background-color: #DDDDDD;
 				float: left;
 			}
 			.login h2{
