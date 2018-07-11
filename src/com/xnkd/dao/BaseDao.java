@@ -27,7 +27,7 @@ public class BaseDao {
 		username="root";
 		passWord="root";
 		driver="com.mysql.jdbc.Driver";
-		url="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8";
+		url="jdbc:mysql://127.0.0.1:3306/cloudDisk?useUnicode=true&characterEncoding=utf8";
 		try {
 			Class.forName(driver);
 		} catch (ClassNotFoundException e) {

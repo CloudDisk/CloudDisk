@@ -14,7 +14,7 @@ public class DirectoryDaoImpl extends BaseDao implements DirectoryDao {
 	public List<Directory> selectPath(Map<String, Object> params) {
 		Integer dirId=(Integer) params.get("dirId");
 		
-		String sql="select * from t_directory where dirId=?";
+		String sql="select * from directory where dirId=?";
 		List<Directory> directoryList=this.executeDQL(Directory.class, sql, dirId);
 		return directoryList;
 	}
@@ -23,7 +23,7 @@ public class DirectoryDaoImpl extends BaseDao implements DirectoryDao {
 	public Integer deleteDirectory(Directory directory) {
 		Integer dirId=(Integer) directory.getDirId();
 		
-		String sql="delete from t_directory where dirId=?";
+		String sql="delete from directory where dirId=?";
 		return this.executeDML(sql, dirId);
 	}
 

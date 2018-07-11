@@ -18,7 +18,7 @@ public class FileDaoImpl extends BaseDao implements FileDao {
 		String fileName=(String)params.get("fileName");
 		String filePath=(String)params.get("filePath");
 		
-		String sql="select * from t_file where filePath=? and fileName=?";
+		String sql="select * from file where filePath=? and fileName=?";
 		List<File> fileList=this.executeDQL(File.class, sql, filePath,fileName);
 		return fileList;
 	}
@@ -32,7 +32,7 @@ public class FileDaoImpl extends BaseDao implements FileDao {
 	@Override
 	public Integer deleteFile(File file) {
 		Integer fileId=file.getFileId();
-		String sql="delete from t_file where fileId=?"; 
+		String sql="delete from file where fileId=?"; 
 		return this.executeDML(sql, fileId);
 	}
 

@@ -13,7 +13,7 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 		String userName=(String)params.get("username");
 		String passWord=(String)params.get("password");
 		
-		String sql="select * from t_user where username=? and password=?";
+		String sql="select * from user where username=? and password=?";
 		List<User> userList=this.executeDQL(User.class, sql, userName,passWord);
 		return userList.size()==0?null:userList.get(0);
 	}
@@ -23,31 +23,31 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 		String userName=user.getUsername();
 		String passWord=user.getPassword();
 		String email=user.getEmail();
-		String sql="insert into t_user(username,password,email) values(?,?,?)";
+		String sql="insert into user(username,password,email) values(?,?,?)";
 		return this.executeDML(sql, userName,passWord,email);
 	}
 
 	@Override
 	public Integer deleteUser(Integer userId) {
-		String sql="delete from t_user where userId=?";
+		String sql="delete from user where userId=?";
 		return this.executeDML(sql, userId);
 	}
 
 	@Override
 	public Integer updateUser(User user) {
-		String sql="update t_user set username=?,password=?,email=? where userId=?";
+		String sql="update user set username=?,password=?,email=? where userId=?";
 		return this.executeDML(sql, user);
 	}
 
 	@Override
 	public User selectById(Integer userId) {
-		String sql="select *from t_user where userId=?";
+		String sql="select *from user where userId=?";
 		return (User) this.executeDQL(User.class, sql, userId);
 	}
 
 	@Override
 	public List<User> selectByname(String name) {
-		String sql="select *from t_user where name=?";
+		String sql="select *from user where name=?";
 		return this.executeDQL(User.class, sql, name);
 	}
 
