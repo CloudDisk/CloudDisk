@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -26,7 +26,7 @@
 			.login h2{
 				text-align: center;
 				margin-top: 60px;
-				color: cornflowerblue;;
+				color: cornflowerblue;
 			}
 			.login form{
 				width: 100%;
@@ -66,7 +66,7 @@
 			<img src="images/timg.jpg"/>
 			<div class="login">
 				<h2>网盘登录</h2>
-				<form action="" method="post">
+				<form action="/CloudDisk/userAction?method=login" method="post">
 					<div class="input1">
 						<label>账号   </label>
 						<input type="text"  value="" placeholder="请输入账号" />
